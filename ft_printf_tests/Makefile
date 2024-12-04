@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+#CFLAGS = -Wall -Werror -Wextra
 SRC = ft_printf_tests.c
 OBJS = $(SRC:.c=.o)
 NAME = ft_printf_test

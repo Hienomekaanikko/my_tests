@@ -12,7 +12,7 @@ int	main(void)
 	unsigned int u = 123325435;
 	char c = 'a';
 	char *s = "HELLOOO";
-
+s
 	//comment out if using only the last "combo test"
 	void *add;
 	void *ptr;
@@ -23,7 +23,26 @@ int	main(void)
 	add2 = &i;
 	ptr2 = &d;
 
-	ft_printf("\n");
+	//OUT OF SCOPE TESTS, cannot use wall werror wextra with these so it's undefined! :)
+	// printf("Undefined behaviour tests for fun:\n");
+	// printf("printf: \nHello, here is an integer: %d, here is another integer: %i, here is a character: %c here is an unsigned int: %u\n"
+	// 		"here is a string: %s, here is a lowercase hexadecimal: %x, here is an uppercase hexadecimal: %X,\n"
+	// 		"here is a pointer address %p\n",
+	// 		NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+	// ft_printf("ft_printf: \nHello, here is an integer: %d, here is another integer: %i, here is a character: %c here is an unsigned int: %u\n"
+	// 		"here is a string: %s, here is a lowercase hexadecimal: %x, here is an uppercase hexadecimal: %X,\n"
+	// 		"here is a pointer address %p\n",
+	// 		NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+	// printf("\n");
+	// printf("Undefined wrong specifiers:\n");
+	// printf("Wrong specifier character: %d\n", printf("%t"));
+	// printf("Wrong specifier character: %d\n", ft_printf("%t"));
+	// printf("Wrong specifier number: %d\n", printf("%2"));
+	// printf("Wrong specifier number: %d\n", ft_printf("%2"));
+	// printf("\n");
+
+	//DEFINED TESTS
+	printf("\n");
 	ft_printf("Length tests (input <- length):\n");
 	printf(" <- printf empty s: %d\n", printf("%s", ""));
 	ft_printf(" <- ft_printf empty s: %d\n", ft_printf("%s", ""));
@@ -47,10 +66,6 @@ int	main(void)
 	ft_printf(" <- ft_printf X: %d\n", ft_printf("%X", 12345));
 	printf(" <- printf X: %d\n", printf("%u", 12345));
 	ft_printf(" <- ft_printf X: %d\n", ft_printf("%u", 12345));
-	
-	ft_printf("\n");
-	printf(" <- Wrong specifier: %d\n", printf("%t ", "Hello"));
-	ft_printf(" <- Wrong specifier: %d\n", ft_printf("%t ", "Hello"));
 
 	ft_printf("\n");
 	printf("printf d:\n %d %d %d %d %d\n", -1, 0, INT_MIN, INT_MAX, 010);
