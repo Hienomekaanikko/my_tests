@@ -47,6 +47,10 @@ int	main(void)
 	ft_printf(" <- ft_printf X: %d\n", ft_printf("%X", 12345));
 	printf(" <- printf X: %d\n", printf("%u", 12345));
 	ft_printf(" <- ft_printf X: %d\n", ft_printf("%u", 12345));
+	
+	ft_printf("\n");
+	printf(" <- Wrong specifier: %d\n", printf("%t ", "Hello"));
+	ft_printf(" <- Wrong specifier: %d\n", ft_printf("%t ", "Hello"));
 
 	ft_printf("\n");
 	printf("printf d:\n %d %d %d %d %d\n", -1, 0, INT_MIN, INT_MAX, 010);
@@ -111,4 +115,26 @@ int	main(void)
 			"here is a string: %s, here is a lowercase hexadecimal: %x, here is an uppercase hexadecimal: %X,\n"
 			"here is a pointer address %p\n",
 			d, i, c, u, s, x, X, p);
+
+	ft_printf("CROSSTESTING\n");
+	printf(" <- printf d: %d\n", printf("%d", 12345));
+	ft_printf(" <- ft_printf d: %d\n", ft_printf("%d", 12345));
+
+	printf(" <- printf d: %d\n", printf("%d", 12345));
+	ft_printf(" <- ft_printf d: %d\n", ft_printf("%d", 12345));
+
+	printf(" <- printf x: %d\n", printf("%x", 12345));
+	ft_printf(" <- ft_printf x: %d\n", ft_printf("%x", 12345));
+
+	printf(" <- printf p: %d\n", printf("%p", add));
+	ft_printf(" <- ft_printf p: %d\n", ft_printf("%p", add));
+
+	printf(" <- printf c: %d\n", printf("%c", 'a'));
+	ft_printf(" <- ft_printf c: %d\n", ft_printf("%c", 'a'));
+
+	printf("printf mix of specifiers: \n%d %u %s %x %X %p %% %i\n", 123, 123, "Hellohello", 123456789, 123456789, &i, 123456);
+	ft_printf("ft_printf mix of specifiers: \n%d %u %s %x %X %p %% %i\n", 123, 123, "Hellohello", 123456789, 123456789, &i, 123456);
+
+	printf("printf percent: %%\n");
+	ft_printf("ft_printf percent: %%\n");
 }
