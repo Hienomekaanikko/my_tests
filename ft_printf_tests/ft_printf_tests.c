@@ -12,8 +12,7 @@ int	main(void)
 	unsigned int u = 123325435;
 	char c = 'a';
 	char *s = "HELLOOO";
-s
-	//comment out if using only the last "combo test"
+
 	void *add;
 	void *ptr;
 	void *add2;
@@ -34,14 +33,20 @@ s
 	// 		"here is a pointer address %p\n",
 	// 		NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 	// printf("\n");
-	// printf("Undefined wrong specifiers:\n");
-	// printf("Wrong specifier character: %d\n", printf("%t"));
-	// printf("Wrong specifier character: %d\n", ft_printf("%t"));
-	// printf("Wrong specifier number: %d\n", printf("%2"));
-	// printf("Wrong specifier number: %d\n", ft_printf("%2"));
+	// printf("Wrong specifiers:\n");
+	// printf("printf: Wrong specifier character: %d\n", printf("%t"));
+	// printf("ftprintf: Wrong specifier character: %d\n", ft_printf("%t"));
+	// printf("printf: Wrong specifier number: %d\n", printf("%2"));
+	// printf("ftprintf: Wrong specifier number: %d\n", ft_printf("%2"));
+	// printf("<--- printf: Percent at the end: %d\n", printf("Hello whats up %"));
+	// printf("<--- ft_printf: Percent at the end: %d\n", ft_printf("Hello whats up %"));
 	// printf("\n");
 
 	//DEFINED TESTS
+	printf("printf NULL TEST\n");
+	printf(NULL);
+	printf("ftprintf NULL TEST\n");
+	ft_printf(NULL);
 	printf("\n");
 	ft_printf("Length tests (input <- length):\n");
 	printf(" <- printf empty s: %d\n", printf("%s", ""));
@@ -62,10 +67,14 @@ s
 	ft_printf(" <- ft_printf c: %d\n", ft_printf("%c", 'a'));
 	printf(" <- printf x: %d\n", printf("%x", 12345));
 	ft_printf(" <- ft_printf x: %d\n", ft_printf("%x", 12345));
+	printf(" <- neg printf x: %d\n", printf("%x", -12345));
+	ft_printf(" <- neg ft_printf x: %d\n", ft_printf("%x", -12345));
 	printf(" <- printf X: %d\n", printf("%X", 12345));
 	ft_printf(" <- ft_printf X: %d\n", ft_printf("%X", 12345));
-	printf(" <- printf X: %d\n", printf("%u", 12345));
-	ft_printf(" <- ft_printf X: %d\n", ft_printf("%u", 12345));
+	printf(" <- neg printf X: %d\n", printf("%X", -12345));
+	ft_printf(" <- neg ft_printf X: %d\n", ft_printf("%X", -12345));
+	printf(" <- printf u: %d\n", printf("%u", 12345));
+	ft_printf(" <- ft_printf u: %d\n", ft_printf("%u", 12345));
 
 	ft_printf("\n");
 	printf("printf d:\n %d %d %d %d %d\n", -1, 0, INT_MIN, INT_MAX, 010);
@@ -132,11 +141,6 @@ s
 			d, i, c, u, s, x, X, p);
 
 	ft_printf("CROSSTESTING\n");
-	printf(" <- printf d: %d\n", printf("%d", 12345));
-	ft_printf(" <- ft_printf d: %d\n", ft_printf("%d", 12345));
-
-	printf(" <- printf d: %d\n", printf("%d", 12345));
-	ft_printf(" <- ft_printf d: %d\n", ft_printf("%d", 12345));
 
 	printf(" <- printf x: %d\n", printf("%x", 12345));
 	ft_printf(" <- ft_printf x: %d\n", ft_printf("%x", 12345));
